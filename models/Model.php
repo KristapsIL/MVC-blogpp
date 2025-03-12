@@ -33,11 +33,10 @@ abstract class Model {
         $columns = implode(", ", array_keys($data));
         $placeholders = ":" . implode(", :", array_keys($data));
     
-        $sql = "INSERT INTO static::getTableName()($columns) VALUES ($placeholders)";
+        $sql = "INSERT INTO ".static::getTableName()."($columns) VALUES ($placeholders)";
     
         $stmt = self::$db->query($sql, $data); 
     
-        return self::$db->lastInsertId(); 
     }
     public static function save($id, $data) {
         self::init();

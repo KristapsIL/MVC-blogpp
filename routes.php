@@ -3,5 +3,8 @@
 return [
     '/' => 'BlogController@index',
     '/show' => 'BlogController@show',
-    '/create' => 'BlogController@create'
+    '/create' => 'BlogController@create',
+    '/edit' => 'BlogController@edit',
+    '/store' => 'BlogController@store',
+    '/update' => 'BlogController@update'
 ];

@@ -13,16 +13,21 @@ class BlogController {
         require "views/blog/create.view.php"; 
     }
     public function store(){
-        
-        return back();
+        Blog::create(["content" => $_POST["content"]]);
+        header("Location: /");
+        exit();
     }
     public function edit(){
+        $post = Blog::find($_GET["id"]);
         require "views/blog/edit.view.php";
     }
     public function update(){
-        return back();
+        Blog::save($_GET["id"],["content" => $_POST["content"]]);
+        header("Location: /");
+        exit();
     }
     public function destroy(){
-        return back();
+        header("Location: /");
+        exit();
     }
 }

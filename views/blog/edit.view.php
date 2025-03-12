@@ -8,10 +8,11 @@
 <body>
     <h1>Visi bloga ieraksti</h1>
     <div>
-        <?php foreach($posts as $post){ ?>
-            <p><a href="/show?id=<?= $post['id']?>">Post <?= $post['id']?></a></p>
-            <p><?= $post['content']?></p>
-        <?php } ?>
+        <form method="POST" action="/update" enctype="multipart/form-data">
+            <label for="content">Content:</label>
+            <input type="text" name="content" id="content" value="<?= htmlspecialchars($_POST["content"] ?? '') ?>" required>
+            <button type="submit">Submit</button>
+        </form>
     </div>
 </body>
 </html>

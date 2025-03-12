@@ -7,6 +7,7 @@
 </head>
 <body>
     <a href="/">Back</a>
+    <a href="/edit?id=<?= $post['id']?>">Edit</a>
   <h1>Viens bloga ieraks</h1>
   <div>
     <p>Post <?=$post['id']?></p>
